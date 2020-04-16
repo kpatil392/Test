@@ -1,10 +1,11 @@
-package com.example.myhh
+package com.example.myhh.demo1
 
 import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.myhh.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class NavManiActivity : AppCompatActivity(), View.OnClickListener
@@ -50,7 +51,10 @@ class NavManiActivity : AppCompatActivity(), View.OnClickListener
     private fun addFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
-            .setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
+            .setCustomAnimations(
+                R.anim.design_bottom_sheet_slide_in,
+                R.anim.design_bottom_sheet_slide_out
+            )
             .replace(R.id.content, fragment, fragment.javaClass.simpleName)
             .commit()
     }

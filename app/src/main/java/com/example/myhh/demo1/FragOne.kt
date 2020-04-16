@@ -1,13 +1,10 @@
-package com.example.myhh
+package com.example.myhh.demo1
 
-import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.example.myhh.databinding.FragOneBinding
 
 
 class FragOne : Fragment() {

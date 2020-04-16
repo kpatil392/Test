@@ -1,12 +1,11 @@
-package com.example.myhh
+package com.example.myhh.demo1
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.example.myhh.R
 import com.example.myhh.databinding.ActivityLoginBinding
 
 class ActivityLogin : AppCompatActivity()
@@ -14,7 +13,9 @@ class ActivityLogin : AppCompatActivity()
     private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=DataBindingUtil.setContentView(this,R.layout.activity_login)
+        binding=DataBindingUtil.setContentView(this,
+            R.layout.activity_login
+        )
         binding.button.setOnClickListener(){
             var Name=binding.edtOne.text.toString().trim()
             var Pass=binding.edtTwo.text.toString().trim()
@@ -28,7 +29,7 @@ class ActivityLogin : AppCompatActivity()
                 }else{
                     if(Name.equals("k") && Pass.equals("k") )
                     {
-                        val intent=Intent(this,MainActivity::class.java)
+                        val intent=Intent(this, MainActivity::class.java)
                         intent.putExtra("K",Name)
                         intent.putExtra("N",Pass)
                         startActivity(intent)

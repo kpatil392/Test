@@ -1,14 +1,12 @@
-package com.example.myhh
+package com.example.myhh.demo1
 
 import android.content.Context
-import android.content.SharedPreferences
-import android.database.DatabaseUtils
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.View.OnContextClickListener
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import com.example.myhh.*
 
 import com.example.myhh.databinding.AactivityMainBinding
 import kotlinx.android.synthetic.main.aactivity_main.*
@@ -18,7 +16,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.aactivity_main)
+        binding = DataBindingUtil.setContentView(this,
+            R.layout.aactivity_main
+        )
         tv.setOnClickListener(this)
         val prefs = customPreference(this)
         if(prefs.session!=true) {

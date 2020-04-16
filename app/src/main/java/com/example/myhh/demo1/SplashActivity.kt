@@ -1,13 +1,11 @@
-package com.example.myhh
+package com.example.myhh.demo1
 
 import android.content.Intent
-import android.database.DatabaseUtils
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import androidx.databinding.DataBindingUtil
-import com.example.myhh.databinding.AactivityMainBinding
-import com.example.myhh.databinding.ActivityMainBinding
+import com.example.myhh.R
 import com.example.myhh.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity()  {
@@ -16,7 +14,9 @@ class SplashActivity : AppCompatActivity()  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=DataBindingUtil.setContentView(this,R.layout.activity_splash)
+        binding=DataBindingUtil.setContentView(this,
+            R.layout.activity_splash
+        )
         
         Handler().postDelayed({
             val prefs = customPreference(this)
@@ -26,7 +26,7 @@ class SplashActivity : AppCompatActivity()  {
                 startActivity(intent)
                 finish()
             }else{
-                val intent=Intent(this,ActivityLogin::class.java)
+                val intent=Intent(this, ActivityLogin::class.java)
                 startActivity(intent)
                 finish()
             }
